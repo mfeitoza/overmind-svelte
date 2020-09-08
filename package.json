@@ -5,6 +5,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "overmind": "^25.0.2",
     "svelte": "^3.24.0"
   },
   "devDependencies": {

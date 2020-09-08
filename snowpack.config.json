@@ -14,7 +14,11 @@
     ],
     ["@snowpack/plugin-run-script", {"cmd": "svelte-check --output human", "watch": "$1 --watch", "output": "stream"}]
   ],
+  "devOptions": {
+    "open": "none"
+  },
   "installOptions": {
-    "installTypes": true
+    "installTypes": true,
+    "sourceMap": true
   }
 }

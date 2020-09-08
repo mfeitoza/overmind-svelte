@@ -1,5 +1,14 @@
 <script lang="ts">
-	let message:string = 'Learn Svelte with Typescript';
+	export let overmind
+	
+	import { setContext } from 'svelte'
+	import { createMixin } from './overmindSvelte'
+
+	import { UsersComponent } from './users'
+	import { ArticlesComponent } from './articles'
+
+	const store = createMixin(overmind)
+	const {state} = store
 </script>
 
 <style>
@@ -40,18 +49,7 @@
 </style>
 
 <div class="App">
-	<header class="App-header">
-		<img src="/logo.svg" class="App-logo" alt="logo" />
-		<p>
-			Edit <code>src/App.svelte</code> and save to reload.
-		</p>
-		<a
-			class="App-link"
-			href="https://svelte.dev"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			{message}
-		</a>
-	</header>
+	<UsersComponent></UsersComponent>
+	<ArticlesComponent></ArticlesComponent>
+	{$state.users.input}
 </div>
