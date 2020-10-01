@@ -1,5 +1,7 @@
 <script lang="ts">
-    import { getStore } from '../overmindSvelte'
+    import {setContext} from 'svelte'
+    import { getStore } from '../overmind'
+    setContext('$name', 'test')
     const { state, actions } = getStore()
     let text = ''
     
@@ -8,10 +10,11 @@
         actions.users.input(text)
     }
 
-    $: userInput = state.users.input
+    $: userInput = $state.users.input
+    $: name = $state.users.module
 </script>
 
-<h1>User: </h1>
+<h1>{name} </h1>
 <input type="text" bind:value={text} />
 <p>User input: {userInput}</p>
 

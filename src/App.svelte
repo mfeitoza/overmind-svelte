@@ -1,6 +1,7 @@
 <script lang="ts">
-	export let overmind
-	
+	import type { Overmind } from './overmind'
+	export let overmind: Overmind
+
 	import { setContext } from 'svelte'
 	import { createMixin } from './overmindSvelte'
 
@@ -8,7 +9,7 @@
 	import { ArticlesComponent } from './articles'
 
 	const store = createMixin(overmind)
-	const {state} = store
+
 </script>
 
 <style>
@@ -51,5 +52,4 @@
 <div class="App">
 	<UsersComponent></UsersComponent>
 	<ArticlesComponent></ArticlesComponent>
-	{$state.users.input}
 </div>

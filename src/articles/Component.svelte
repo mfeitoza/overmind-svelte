@@ -1,9 +1,9 @@
 <script lang="ts">
-    import { getStore } from '../overmindSvelte'
-    console.log('articles component')
+    import { getStore } from '../overmind'
     const { state, actions } = getStore()
     $: userInput = $state.users.input
+    $: name = $state.articles.module
 </script>
 
-<h1>Articles</h1>
+<h1>{name}</h1>
 <p>User input: {userInput}</p>
