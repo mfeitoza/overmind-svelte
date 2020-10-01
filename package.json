@@ -1,10 +1,11 @@
 {
   "scripts": {
-    "start": "snowpack dev",
+    "start": "snowpack dev --reload",
     "build": "snowpack build",
     "test": "jest"
   },
   "dependencies": {
+    "lodash": "^4.17.20",
     "overmind": "^25.0.2",
     "svelte": "^3.24.0"
   },
@@ -15,7 +16,9 @@
     "@testing-library/svelte": "^3.0.0",
     "@tsconfig/svelte": "^1.0.3",
     "@types/jest": "^26.0.4",
+    "@types/lodash": "^4.14.161",
     "@types/snowpack-env": "^2.3.0",
+    "babel-plugin-lodash": "^3.3.4",
     "jest": "^26.2.2",
     "snowpack": "^2.10.0",
     "svelte-check": "^1.0.0",
