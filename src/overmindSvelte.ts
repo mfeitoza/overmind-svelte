@@ -58,12 +58,13 @@ export function createMixin<ThisConfig extends IConfiguration>(
     } else {
       onMount(() => {
         const store = getContext(STORE) as Mixin<ThisConfig>
+        let hasRescoped = false
         tree.pathDependencies.forEach(path => {
-          const proxy = _get(path, tree.state)
+          const proxy = _get(path, store.state)
           if (proxy[IS_PROXY]) {
             if (TREES.get(path)) {
-              console.log('rescope')
               TREES.set(path, (overmind as any).proxyStateTree.rescope(proxy, tree))
+              hasRescoped = true
             }
             TREES.set(path, proxy)
           }
